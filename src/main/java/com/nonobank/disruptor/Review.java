@@ -45,7 +45,7 @@ public class Review {
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				LockSupport.park();	//后执行
+				LockSupport.park();	//后执行,object先wait在notify，但LockSupport对于阻塞和唤醒的先后顺序很灵活。
 				System.err.println("sum: " + sum);
 			}
 		});
